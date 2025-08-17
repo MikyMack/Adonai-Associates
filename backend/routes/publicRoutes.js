@@ -75,6 +75,7 @@ router.get('/contact', async (req, res) => {
         res.status(500).send('Error loading contact page data');
     }
 });
+
 router.get('/services', async (req, res) => {
     try {
         res.render('services', {

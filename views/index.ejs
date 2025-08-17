@@ -27,6 +27,33 @@
     <link rel="stylesheet" href="/css/fontawesome.min.css">
     <link rel="stylesheet" href="/css/app.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPDTQFF816"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZPDTQFF816');
+</script>
+
+
+
+<meta name="google-site-verification" content="DDUNwcZMVOzMGYhjoksbZeiLDINK8lwFfddhTFqtAQU" />
+
+
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "st97o2kr63");
+</script>
+   
 </head>
 
 <body class="bg-black2">
@@ -1031,6 +1058,67 @@
             </div>
         </div>
     </section>
+
+
+    <div id="adonai-popup-overlay">
+        <div id="adonai-popup">
+            <button class="close-btn" onclick="adonaiClosePopup()" aria-label="Close">&times;</button>
+            <div class="adonai-title">Ready to Build Your Dream?</div>
+            <div class="adonai-title-malayalam">നിങ്ങളുടെ സ്വപ്നം സാക്ഷാത്കരിക്കാൻ തയ്യാറാണോ?</div>
+            <div class="adonai-subtitle">
+                Book a service with <span style="color:#eab308;font-weight:600;">Adonai Associates</span> now!<br>
+                <span style="font-size:1.1em;">Let's turn your vision into reality.</span>
+            </div>
+        
+            <div class="adonai-btns">
+                <a href="tel:+917034035574" class="adonai-btn call" onclick="adonaiClosePopup()">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="btn-label">Call Now</span>
+                    <span class="btn-label-malayalam">ഇപ്പോൾ വിളിക്കൂ</span>
+                </a>
+                <a href="https://wa.me/917034035574?text=Hi%20Adonai%20Associates!%20I%20want%20to%20book%20a%20service." target="_blank" class="adonai-btn whatsapp" onclick="adonaiClosePopup()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="btn-label">WhatsApp</span>
+                    <span class="btn-label-malayalam">വാട്സ്ആപ്പ് സന്ദേശം അയയ്ക്കൂ</span>
+                </a>
+            </div>
+            <div class="adonai-cta">
+                <i class="fas fa-bolt" style="color:#eab308;"></i>
+                Fast response &amp; expert advice!
+            </div>
+            <div class="adonai-cta-malayalam">
+               
+                വേഗത്തിലുള്ള പ്രതികരണവും വിദഗ്ധ ഉപദേശവും!
+            </div>
+        </div>
+    </div>
+    <script>
+        // Show popup after 3 seconds or on scroll 40% down, whichever comes first
+        let adonaiPopupShown = false;
+        function adonaiShowPopup() {
+            if (adonaiPopupShown) return;
+            adonaiPopupShown = true;
+            document.getElementById('adonai-popup-overlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function adonaiClosePopup() {
+            document.getElementById('adonai-popup-overlay').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        setTimeout(adonaiShowPopup, 3000);
+        window.addEventListener('scroll', function() {
+            if (adonaiPopupShown) return;
+            const scrollY = window.scrollY || window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0 && scrollY / docHeight > 0.4) {
+                adonaiShowPopup();
+            }
+        });
+        // Optional: close popup on overlay click
+        document.getElementById('adonai-popup-overlay').addEventListener('click', function(e) {
+            if (e.target === this) adonaiClosePopup();
+        });
+    </script>
     <footer class="footer-wrapper footer-layout2 bg-white">
         <div class="container">
             <div class="footer-wrap">
@@ -1134,64 +1222,7 @@
     </footer>
 
     <!-- WhatsApp Floating Icon -->
-    <!-- WhatsApp Floating Icon -->
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            right: 30px;
-            bottom: 110px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .whatsapp-float a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #25d366;
-            color: #fff;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            text-decoration: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            transition: background 0.2s;
-            padding: 0;
-        }
-        .whatsapp-float a:hover {
-            background: #1ebe5d;
-            color: #fff;
-            text-decoration: none;
-        }
-        .whatsapp-float .wa-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .whatsapp-float .wa-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-        @media (max-width: 575px) {
-            .whatsapp-float {
-                right: 12px;
-                bottom: 90px;
-            }
-            .whatsapp-float a {
-                width: 58px;
-                height: 58px;
-            }
-            .whatsapp-float .wa-icon {
-                width: 58px;
-                height: 58px;
-            }
-        }
-    </style>
+
     <div class="whatsapp-float">
         <a href="https://wa.me/917034035574" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
             <span class="wa-icon">
