@@ -75,6 +75,30 @@ router.get('/contact', async (req, res) => {
         res.status(500).send('Error loading contact page data');
     }
 });
+router.get('/best-construction-company-kerala', async (req, res) => {
+    try {
+        res.render('best-construction-company-kerala', { title: 'best-construction-company-kerala'});
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error loading contact page data');
+    }
+});
+router.get('/best-construction-company-trivandrum', async (req, res) => {
+    try {
+        res.render('best-construction-company-trivandrum', { title: 'best-construction-company-trivandrum'});
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error loading contact page data');
+    }
+});
+router.get('/best-construction-company-kollam', async (req, res) => {
+    try {
+        res.render('best-construction-company-kollam', { title: 'best-construction-company-kollam'});
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error loading contact page data');
+    }
+});
 
 router.get('/services', async (req, res) => {
     try {

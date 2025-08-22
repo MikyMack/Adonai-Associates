@@ -403,6 +403,64 @@
             </div>
         </div>
     </footer>
+
+    <div id="adonai-popup-overlay">
+        <div id="adonai-popup">
+            <button class="close-btn" onclick="adonaiClosePopup()" aria-label="Close">&times;</button>
+            <div class="adonai-title">Ready to Build Your Dream?</div>
+            <div class="adonai-title-malayalam">നിങ്ങളുടെ സ്വപ്നം സാക്ഷാത്കരിക്കാൻ തയ്യാറാണോ?</div>
+            <div class="adonai-subtitle">
+                Book a service with <span style="color:#eab308;font-weight:600;">Adonai Associates</span> now!<br>
+                <span style="font-size:1.1em;">Let's turn your vision into reality.</span>
+            </div>
+        
+            <div class="adonai-btns">
+                <a href="tel:+917034035574" class="adonai-btn call" onclick="adonaiClosePopup()">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="btn-label">Call Now</span>
+                    <span class="btn-label-malayalam">ഇപ്പോൾ വിളിക്കൂ</span>
+                </a>
+                <a href="https://wa.me/917034035574?text=Hi%20Adonai%20Associates!%20I%20want%20to%20book%20a%20service." target="_blank" class="adonai-btn whatsapp" onclick="adonaiClosePopup()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="btn-label">WhatsApp</span>
+                    <span class="btn-label-malayalam">വാട്സ്ആപ്പ് സന്ദേശം അയയ്ക്കൂ</span>
+                </a>
+            </div>
+            <div class="adonai-cta">
+                <i class="fas fa-bolt" style="color:#eab308;"></i>
+                Fast response &amp; expert advice!
+            </div>
+            <div class="adonai-cta-malayalam">
+               
+                വേഗത്തിലുള്ള പ്രതികരണവും വിദഗ്ധ ഉപദേശവും!
+            </div>
+        </div>
+    </div>
+    <script>
+        let adonaiPopupShown = false;
+        function adonaiShowPopup() {
+            if (adonaiPopupShown) return;
+            adonaiPopupShown = true;
+            document.getElementById('adonai-popup-overlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function adonaiClosePopup() {
+            document.getElementById('adonai-popup-overlay').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        setTimeout(adonaiShowPopup, 20000);
+        window.addEventListener('scroll', function() {
+            if (adonaiPopupShown) return;
+            const scrollY = window.scrollY || window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0 && scrollY / docHeight > 0.4) {
+                adonaiShowPopup();
+            }
+        });
+        document.getElementById('adonai-popup-overlay').addEventListener('click', function(e) {
+            if (e.target === this) adonaiClosePopup();
+        });
+    </script>
     <div class="scroll-top"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
                 style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
