@@ -91,6 +91,7 @@ router.get('/best-construction-company-trivandrum', async (req, res) => {
         res.status(500).send('Error loading contact page data');
     }
 });
+
 router.get('/best-construction-company-kollam', async (req, res) => {
     try {
         res.render('best-construction-company-kollam', { title: 'best-construction-company-kollam'});
