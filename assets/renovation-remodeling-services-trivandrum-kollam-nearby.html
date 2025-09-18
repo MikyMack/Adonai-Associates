@@ -1050,7 +1050,90 @@
 </head>
 <body>
 
-
+  <header style="width:100%; background:#000000; box-shadow:0 2px 8px rgba(0,0,0,0.04); position:relative; z-index:100;">
+    <div style="width:100%; max-width:1200px; margin:0 auto; padding:0 16px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; min-height:70px;">
+        <!-- Logo -->
+        <div style="flex:0 0 auto; display:flex; align-items:center; padding:10px 0;">
+          <a href="/" style="display:inline-block;">
+            <img src="/img/adonai/logo.png" alt="adonaiAssosciates" style="height:48px; width:auto; max-width:160px;">
+          </a>
+        </div>
+        <!-- Desktop Navigation -->
+        <nav id="mainNav" style="flex:1 1 auto; display:flex; justify-content:flex-end; align-items:center;">
+          <ul id="mainMenuList" style="display:flex; gap:24px; list-style:none; margin:0; padding:0;">
+            <li><a href="/" style="text-decoration:none; color:white; font-weight:500; font-size:1rem; padding:8px 0; display:block;">Home</a></li>
+            <li><a href="/services" style="text-decoration:none; color:white; font-weight:500; font-size:1rem; padding:8px 0; display:block;">Services</a></li>
+            <li><a href="/about" style="text-decoration:none; color:white; font-weight:500; font-size:1rem; padding:8px 0; display:block;">About Us</a></li>
+            <li><a href="/projects" style="text-decoration:none; color:white; font-weight:500; font-size:1rem; padding:8px 0; display:block;">Projects</a></li>
+            <li><a href="/blogs" style="text-decoration:none; color:white; font-weight:500; font-size:1rem; padding:8px 0; display:block;">Blog</a></li>
+            <li><a href="/contact" style="text-decoration:none; color:white; font-weight:500; font-size:1rem; padding:8px 0; display:block;">Contact Us</a></li>
+          </ul>
+          <!-- Hamburger Button for Mobile -->
+          <button id="menuToggleBtn" aria-label="Open Menu" style="display:none; background:none; border:none; padding:8px; margin-left:16px; cursor:pointer;">
+            <span style="display:block; width:28px; height:3px; background:white; margin:5px 0; border-radius:2px;"></span>
+            <span style="display:block; width:28px; height:3px; background:white; margin:5px 0; border-radius:2px;"></span>
+            <span style="display:block; width:28px; height:3px; background:white; margin:5px 0; border-radius:2px;"></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+    <script>
+      // Responsive menu toggle
+      function setHeaderMenuResponsive() {
+        const menuList = document.getElementById('mainMenuList');
+        const menuBtn = document.getElementById('menuToggleBtn');
+        if(window.innerWidth <= 900) {
+          menuList.style.display = 'none';
+          menuBtn.style.display = 'block';
+        } else {
+          menuList.style.display = 'flex';
+          menuBtn.style.display = 'none';
+        }
+      }
+      window.addEventListener('DOMContentLoaded', function() {
+        setHeaderMenuResponsive();
+        const menuBtn = document.getElementById('menuToggleBtn');
+        const menuList = document.getElementById('mainMenuList');
+        menuBtn.addEventListener('click', function() {
+          if(menuList.style.display === 'flex') {
+            menuList.style.display = 'none';
+          } else {
+            menuList.style.display = 'flex';
+            menuList.style.flexDirection = 'column';
+            menuList.style.background = '#fff';
+            menuList.style.position = 'absolute';
+            menuList.style.top = '70px';
+            menuList.style.right = '16px';
+            menuList.style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)';
+            menuList.style.padding = '16px 24px';
+            menuList.style.borderRadius = '8px';
+            menuList.style.gap = '12px';
+            menuList.style.zIndex = '9999';
+          }
+        });
+      });
+      window.addEventListener('resize', function() {
+        setHeaderMenuResponsive();
+        // Reset menu styles on resize
+        const menuList = document.getElementById('mainMenuList');
+        if(window.innerWidth > 900) {
+          menuList.style.display = 'flex';
+          menuList.style.flexDirection = 'row';
+          menuList.style.position = '';
+          menuList.style.top = '';
+          menuList.style.right = '';
+          menuList.style.background = '';
+          menuList.style.boxShadow = '';
+          menuList.style.padding = '';
+          menuList.style.borderRadius = '';
+          menuList.style.gap = '24px';
+        } else {
+          menuList.style.display = 'none';
+        }
+      });
+    </script>
+  </header>
 
 
   <header class="hero-banner">
